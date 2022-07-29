@@ -1,0 +1,1 @@
+web: gunicorn community_website_ogonnelloe.wsgi

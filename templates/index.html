@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        {% for update in object_list %}
+            <p>{{ update.title }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import CommunityUpdate
+from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
+@admin.register(CommunityUpdate)
+class CommunityUpdateAdmin(SummernoteModelAdmin):
+
+    summernote_fields = ('content')

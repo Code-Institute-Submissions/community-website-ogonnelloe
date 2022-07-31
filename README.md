@@ -79,16 +79,11 @@ A website where people can come and find information on the lovely village of Og
 |              | Featured Image | Cloudinary Image |                              |
 |              | Excerpt        | TextField        |                              |
 | Many to Many | Likes          | User model       |                              |
-| ForeignKey   | Slug (Unique)  | SlugField        | Max length 200               |
+|              | Slug (Unique)  | SlugField        | Max length 200               |
 |              | Status         | Integer          | Draft by default (default=0) |
 |              | Event          | Boolean          |                              |
-
-## Event
-| Key        | Name     | Type                    | Extra Info |
-|------------|----------|-------------------------|------------|
-|            | Location | CharField               |            |
-|            | Time     | DateTime                |            |
-| ForeignKey | Slug     | CharField or SlugField? |            |
+|              | Location       | CharField        |                              |
+|              | Time           | DateTime         |                              |
 
 ## Community Post Comments
 

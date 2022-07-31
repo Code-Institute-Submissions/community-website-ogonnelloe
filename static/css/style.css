@@ -1,3 +1,81 @@
+/* Font from: https://www.fontzip.com/celtic */
+@font-face {
+    font-family: Celtic;
+    src: url('../fonts/Celtic.ttf')  format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: aqua;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-family: 'Merriweather', serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    line-height: 4.68rem;
+}
+
+header a,
+footer a {
+    text-decoration: none;
+}
+
+header a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+}
+
+#top-header {
+    background-color: #E0DFD5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logo {
+    font-family: Celtic;
+    font-size: 3.75rem;
+    padding-left: 1.25rem;
+}
+
+#log-links {
+
+}
+
+#log-links li {
+    list-style-type: none;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: darkgray;
+}
+
+#menu {
+    font-size: 110%;
+    letter-spacing: 0.25rem;
+    padding-right: 20px;
+}
+
+#menu li {
+    list-style-type: none;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+#menu a:hover {
+    border-bottom: 1px solid #000;
 }

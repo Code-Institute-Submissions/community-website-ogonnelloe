@@ -2,6 +2,13 @@
 
 {% block content %}
 
+    <section id="hero-outer">
+        <div id="hero-image"></div>
+        <div id="cover-text">
+            <h2>Welcome to Ogonnelloes' Community Website</h2>
+        </div>
+    </section>
+
     <div>
         {% for update in object_list %}
             <p>{{ update.title }}</p>

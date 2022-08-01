@@ -51,24 +51,39 @@ a:active {
     display: inline-block;
 }
 
-nav {
+/* hero image */
+
+#hero-outer {
+    min-height: 28rem;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#hero-image {
+    min-height: 28rem;
+    max-width: 100%;
+    background: url("../images/hero-image.webp") no-repeat center;
+    background-size: cover;
+}
+
+#cover-text {
     display: flex;
-    justify-content: center;
-    background-color: darkgray;
+    width: 70%;
+    height: fit-content;
+    text-transform: uppercase;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    text-align: center;
 }
 
-#menu {
-    font-size: 110%;
-    letter-spacing: 0.25rem;
-    padding-right: 20px;
+#cover-text h2 {
+    font-size: 2rem;
+    font-family: Celtic;
+    margin: auto;
 }
 
-#menu li {
-    list-style-type: none;
-    padding-right: 10px;
-    display: inline-block;
-}
-
-#menu a:hover {
-    border-bottom: 1px solid #000;
+#intro-paragraph {
+    text-align: center;
 }

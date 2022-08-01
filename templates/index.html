@@ -9,9 +9,16 @@
         </div>
     </section>
 
-    <div>
-        {% for update in object_list %}
-            <p>{{ update.title }}</p>
+    <div class="card-group">
+        {% for update in recent_posts %}
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ update.title }}</h5>
+                <p class="card-text">{{ update.excerpt }}</p>
+                <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
+            </div>
+        </div>
         {% endfor %}
     </div>
 

@@ -1,6 +1,6 @@
-from .views import UpdateList
+from .views import CommunityUpdatesMostRecent
 from django.urls import path
 
 urlpatterns = [
-    path('', UpdateList.as_view(), name='home'),
+    path('', CommunityUpdatesMostRecent.as_view(), name='home'),
 ]

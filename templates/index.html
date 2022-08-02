@@ -11,12 +11,17 @@
 
     <div class="card-group">
         {% for update in recent_posts %}
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card mx-4" style="width: 18rem;">
+            {% if "placeholder" in update.featured_image.url %}
+            <img src="{{ update.featured_image.url|add:".jpg" }}" class="card-img-top" alt="...">
+            {% else %}
+            <img src="{{ update.featured_image.url }}" class="card-img-top" alt="...">
+            {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ update.title }}</h5>
                 <p class="card-text">{{ update.excerpt }}</p>
                 <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
         {% endfor %}

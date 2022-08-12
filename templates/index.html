@@ -11,7 +11,7 @@
 
     <div class="card-group">
         {% for update in recent_posts %}
-        <div class="card mx-4" style="width: 18rem;">
+        <div class="card m-4" style="width: 18rem;">
             {% if "placeholder" in update.featured_image.url %}
             <img src="{{ update.featured_image.url|add:".jpg" }}" class="card-img-top" alt="...">
             {% else %}

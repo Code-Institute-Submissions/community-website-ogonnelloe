@@ -19,3 +19,15 @@ class CommunityUpdatesMostRecent(generic.TemplateView):
         context['recent_posts'] = updates[0:3]
 
         return context
+
+# Static Pages
+
+
+def plan_page(request):
+    """ View to display 3 year plan page """
+    return render(request, "3-year-plan.html")
+
+
+def exchange_page(request):
+    """ View to display exchange page """
+    return render(request, "exchange.html")

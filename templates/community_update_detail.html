@@ -6,6 +6,29 @@
 
 <p>{{post.title}}</p>
 <p>{{post.created_on}}</p>
+<!-- safe means that the value content is returned as
+is (html tags and all) so that it renders in the browser -->
+<p>{{post.content | safe}}</p>
+
+{% if user.is_authenticated %}
+
+<form action="{% url 'community_update_like' post.slug %}" method="POST">
+    {% csrf_token %}
+
+    {% if liked %}
+    <button type="submit" name="community_update_like" value="{{post.slug}}" class="btn-like">Unlike</button>
+    {% else %}
+    <button type="submit" name="community_update_like" value="{{post.slug}}" class="btn-like">like</button>
+    {% endif %}
+</form>
+
+{% else %}
+
+<p>Log in to like</p>
+
+{% endif %}
+
+<p><strong>{{post.number_of_likes}}</strong></p>
 
 {% for comment in comments %}
 <p>{{comment.body}}</p>

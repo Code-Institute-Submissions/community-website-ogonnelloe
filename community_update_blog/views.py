@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import CommunityUpdate
 from .forms import CommentForm
 
@@ -25,11 +26,12 @@ class CommunityUpdateList(generic.ListView):
 
 class CommunityUpdateDetail(View):
 
+
     def get(self, request, slug, **kwargs):
         queryset = CommunityUpdate.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.community_update_comment.filter(approved=True).order_by('created_on')
         template_name = 'community_update_detail.html'
+        comments = post.community_update_comment.filter(approved=True).order_by('created_on')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -47,8 +49,8 @@ class CommunityUpdateDetail(View):
     def post(self, request, slug, **kwargs):
         queryset = CommunityUpdate.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.community_update_comment.filter(approved=True).order_by('created_on')
         template_name = 'community_update_detail.html'
+        comments = post.community_update_comment.filter(approved=True).order_by('created_on')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -72,6 +74,18 @@ class CommunityUpdateDetail(View):
              "liked": liked,
              "comment_form": CommentForm()}
         )
+
+class CommunityUpdateLike(View):
+
+    def post(self, request, slug):
+        post = get_object_or_404(CommunityUpdate, slug = slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('community_update_detail', args=[slug]))
 
 
 # Static Pages

@@ -2,7 +2,30 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <p>{{post.title}}</p>
 <p>{{post.created_on}}</p>
+
+{% for comment in comments %}
+<p>{{comment.body}}</p>
+<p>From: {{comment.commenter}}</p>
+{% endfor %}
+
+{% if commented %}
+    <div class="alert alert-success" role="alert">
+        Your comment is awaiting approval
+    </div>
+{% else %}
+
+{% if user.is_authenticated %}
+<p>{{user.username}}</p>
+<form method="post">
+    {{ comment_form | crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn">Submit</button>
+</form>
+{% endif %}
+{% endif %}
 
 {% endblock %}

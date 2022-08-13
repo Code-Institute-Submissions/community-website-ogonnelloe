@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'community_update_blog',
 ]
 
@@ -60,6 +61,9 @@ SITE_ID = 1
 # Sites that we'll be redirected to after
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Tell crispy forms to use bootstrap classes
+CRISPY_TEMPLATE_FORM = 'bootstrap'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

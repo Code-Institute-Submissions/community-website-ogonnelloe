@@ -28,3 +28,21 @@ class CommunityUpdate(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+
+class CommunityUpdateComment(models.Model):
+
+    post = models.ForeignKey(CommunityUpdate, on_delete=models.CASCADE,
+                             related_name="community_update_comment")
+    commenter = models.CharField(max_length=80)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.commenter}"
+

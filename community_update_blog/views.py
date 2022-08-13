@@ -1,12 +1,6 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import CommunityUpdate
-
-class CommunityUpdateList(generic.ListView):
-    model = CommunityUpdate
-    queryset = CommunityUpdate.objects.filter(status=1).order_by('-created_on')
-    template_name = 'community_updates.html'
-    paginate_by = 3
 
 
 class CommunityUpdatesMostRecent(generic.TemplateView):
@@ -16,9 +10,30 @@ class CommunityUpdatesMostRecent(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         updates = CommunityUpdate.objects.filter(status=1).order_by('-created_on')
-        context['recent_posts'] = updates[0:3]
+        context['recent_posts'] = updates[:3]
 
         return context
+
+
+class CommunityUpdateList(generic.ListView):
+
+    model = CommunityUpdate
+    queryset = CommunityUpdate.objects.filter(status=1).order_by('-created_on')
+    template_name = 'community_update_list.html'
+    paginate_by = 3
+
+class CommunityUpdateDetail(View):
+
+    def get(self, request, slug, **kwargs):
+        queryset = CommunityUpdate.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        template_name = 'community_update_detail.html'
+
+        return render(
+            request,
+            template_name,
+            {"post": post}
+        )
 
 # Static Pages
 

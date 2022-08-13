@@ -33,6 +33,7 @@ DEBUG = DEBUG_BOOL
 
 ALLOWED_HOSTS = ['community-website-ogonnelloe.herokuapp.com', '127.0.0.1']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 

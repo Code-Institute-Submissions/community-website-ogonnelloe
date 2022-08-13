@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CommunityUpdate
+from .models import CommunityUpdate, CommunityUpdateComment
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(CommunityUpdate)
@@ -11,3 +11,13 @@ class CommunityUpdateAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content']
     summernote_fields = ('content')
 
+@admin.register(CommunityUpdateComment)
+class CommunityUpdateCommentAdmin(SummernoteModelAdmin):
+
+    list_filter = ('approved', 'created_on')
+    list_display = ('commenter', 'body', 'post', 'created_on', 'approved')
+    search_fields = ['name', 'body']
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>noticeboard</p>
+    {% for notice in object_list %}
+    <p>{{notice.title}}</p>
+    {% endfor %}
+
+{% endblock %}

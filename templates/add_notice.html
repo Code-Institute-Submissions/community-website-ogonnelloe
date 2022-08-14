@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+
+
+        {% if notice_added %}
+        <div class="alert alert-success" role="alert">
+            Your comment is awaiting approval
+        </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <p>{{user.username}}</p>
+        <form action="{% url 'add_notice' %}" method="post">
+            {{ notice_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+    {% else %}
+
+    <p>500 page</p>
+
+    {% endif %}
+
+{% endblock %}

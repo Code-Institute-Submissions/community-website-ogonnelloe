@@ -56,6 +56,7 @@ class CommunityUpdateDetail(View):
             liked = True
 
         comment_form = CommentForm(data=request.POST)
+        print(comment_form)
 
         if comment_form.is_valid():
             comment_form.instance.commenter = request.user.username

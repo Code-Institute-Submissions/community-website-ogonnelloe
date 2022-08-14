@@ -52,7 +52,9 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
+    'phonenumber_field',
     'community_update_blog',
+    'noticeboard',
 ]
 
 # So Django can handle multiple sites from one database

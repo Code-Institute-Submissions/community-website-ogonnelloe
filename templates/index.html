@@ -9,23 +9,33 @@
         </div>
     </section>
 
-    <div class="card-group">
-        {% for update in recent_posts %}
-        <div class="card m-4" style="width: 18rem;">
-            {% if "placeholder" in update.featured_image.url %}
-            <img src="{{ update.featured_image.url|add:".jpg" }}" class="card-img-top" alt="...">
-            {% else %}
-            <img src="{{ update.featured_image.url }}" class="card-img-top" alt="...">
-            {% endif %}
-            <div class="card-body">
-                <h5 class="card-title">{{ update.title }}</h5>
-<!--                TODO: use 200 chars of post instead-->
-<!--                <p class="card-text">{{ update.excerpt }}</p>-->
-                <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container my-3">
+        <div class="row">
+
+            {% for update in recent_posts %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        {% if "placeholder" in update.featured_image.url %}
+                        <img src="{{ update.featured_image.url|add:".jpg" }}" class="card-img-top" alt="...">
+                        {% else %}
+                        <img src="{{ update.featured_image.url }}" class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ update.title }}</h5>
+                            <p class="card-text">{{ update.content | slice:'0:500' | safe}} ...</p>
+                            <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+    </div>
+
+    <div class="card-group">
+
     </div>
 
 {% endblock %}

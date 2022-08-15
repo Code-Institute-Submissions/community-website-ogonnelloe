@@ -1,5 +1,4 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 from cloudinary.models import CloudinaryField
 
 class Notice(models.Model):

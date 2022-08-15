@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from noticeboard.models import Notice
 from django.views import generic, View
+from django.views.generic.edit import DeleteView, UpdateView
 from .forms import NoticeForm
 
 
@@ -23,18 +24,33 @@ class AddNotice(View):
 
         notice_form.save()
 
-        # if notice_form.is_valid():
-        #
-        #
-        # else:
-        #     notice_form = NoticeForm()
+        if notice_form.is_valid():
+            notice_form.instance.creator = request.user.username
+            notice_form.save()
+        else:
+            notice_form = NoticeForm()
 
         return render(
             request,
-            "add_notice.html",
+            "noticeboard.html",
             {"notice_added": True,
              "notice_form": NoticeForm()}
         )
+
+class DeleteNotice(DeleteView):
+
+    model = Notice
+
+    success_url = "/noticeboard"
+
+    template_name = "notice_confirm_delete.html"
+
+class UpdateNotice(UpdateView):
+     model = Notice
+     fields = ['title', 'description', 'contact_number', 'contact_email', 'location', 'background_image']
+     template_name = 'notice_update_form.html'
+     success_url = "/noticeboard"
+
 
 class Noticeboard(generic.ListView):
 

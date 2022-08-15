@@ -3,8 +3,11 @@ from cloudinary.models import CloudinaryField
 
 class Notice(models.Model):
 
+
     title = models.CharField(max_length=45, unique=True)
+    id = models.BigAutoField(primary_key=True)
     approved = models.BooleanField(default=False)
+    creator = models.CharField(max_length=80)
     description = models.TextField()
     contact_number = models.CharField(max_length=25, blank=True)
     contact_email = models.EmailField(max_length = 254)

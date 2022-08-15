@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>noticeboard</p>
+    <div class="container">
+    <h1>Noticeboard</h1>
+
     {% for notice in object_list %}
-    <p>{{notice.title}}</p>
+    <div class="col-md-6 d-flex align-items-stretch">
+        <div class="card">
+            <div class="card-body">
+                {% if "placeholder" in notice.background_image.url %}
+                <img src="{{ notice.background_image.url|add:".jpg" }}" class="card-img-top" alt="...">
+                {% else %}
+                <img src="{{ notice.background_image.url }}" class="card-img-top" alt="...">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ notice.title }}</h5>
+                    <p class="card-text">{{ notice.description| safe}}</p>
+                    <p class="card-text"><small class="text-muted">Created on: {{ notice.created_on }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endfor %}
+    </div>
 
 {% endblock %}

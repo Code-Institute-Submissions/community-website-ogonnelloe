@@ -5,6 +5,12 @@
     <h1>Noticeboard</h1>
         <a href="{% url 'add_notice' %}" class="btn btn-primary">Add Notice</a>
 
+    {% if context.notice_added %}
+        <div class="alert alert-success" role="alert">
+            Your Notice is awaiting approval
+        </div>
+    {% endif %}
+
     <div class="row">
     {% for notice in object_list %}
     <div class="col-md-6 d-flex align-items-stretch">

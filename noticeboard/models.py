@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 class Notice(models.Model):
 
 
-    title = models.CharField(max_length=45, unique=True)
+    title = models.CharField(max_length=45 )
     id = models.BigAutoField(primary_key=True)
     approved = models.BooleanField(default=False)
     creator = models.CharField(max_length=80)

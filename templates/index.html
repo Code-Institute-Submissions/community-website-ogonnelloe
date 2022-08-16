@@ -12,7 +12,7 @@
     <div class="container my-3">
         <div class="row"><p>Welcome to Ogonnelloe’s community website.  Ogonnelloe is situated in a beautiful part of
             East Clare, beside Lough Derg and the Sliabh Bearnagh mountains and between the towns of Killaloe and
-            Scariff.  Ogonnelloe has a thriving community of approx 850 people.</p></div>
+            Scariff. Ogonnelloe has a thriving community of approx 850 people.</p></div>
         <div class="row">
 
             {% for update in recent_posts %}
@@ -28,7 +28,7 @@
                             <h5 class="card-title">{{ update.title }}</h5>
                             <p class="card-text">{{ update.content | slice:'0:500' | safe}} ...</p>
                             <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="{% url 'community_update_detail' slug=update.slug %}" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>

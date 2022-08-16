@@ -108,9 +108,24 @@ WSGI_APPLICATION = 'community_website_ogonnelloe.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
-}
+# DATABASES = {
+#         'ENGINE': dj_database_url.parse(DATABASE_URL),
+#         'NAME': '',
+# }
+
+if 'DATABASE_URL' in os.environ:
+    print("Postgres URL found, using it as db")
+    DATABASES = {
+        "default": dj_database_url.parse(DATABASE_URL)
+    }
+else:
+    print("Postgres URL not found, using sqlite3 instead")
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

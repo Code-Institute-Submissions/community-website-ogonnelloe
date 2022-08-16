@@ -32,7 +32,7 @@ class AddNotice(View):
 
         return render(
             request,
-            "noticeboard.html",
+            "add_notice.html",
             {"notice_added": True,
              "notice_form": NoticeForm()}
         )

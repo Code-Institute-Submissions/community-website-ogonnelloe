@@ -79,13 +79,9 @@ A website where people can come and find information on the lovely village of Og
 |              | Updated date   | DateTime         | auto_now=True                |
 |              | Content        | TextField        |                              |
 |              | Featured Image | Cloudinary Image |                              |
-|              | Excerpt        | TextField        |                              |
 | Many to Many | Likes          | User model       |                              |
 |              | Slug (Unique)  | SlugField        | Max length 200               |
 |              | Status         | Integer          | Draft by default (default=0) |
-|              | Event          | Boolean          |                              |
-|              | Location       | CharField        |                              |
-|              | Time           | DateTime         |                              |
 
 ## Community Post Comments
 

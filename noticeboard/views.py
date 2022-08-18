@@ -20,8 +20,6 @@ class AddNotice(View):
 
         notice_form = NoticeForm(data=request.POST)
 
-        print(notice_form)
-
         notice_form.save()
 
         if notice_form.is_valid():

@@ -14,8 +14,7 @@
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ update.title }}</h5>
-<!--                TODO: use 200 chars of post instead-->
-<!--                <p class="card-text">{{ update.excerpt }}</p>-->
+                <p class="card-text">{{ update.content | slice:'0:500' | safe}} ...</p>
                 <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
                 <a href="{% url 'community_update_detail' slug=update.slug %}" class="btn btn-primary">Go somewhere</a>
             </div>

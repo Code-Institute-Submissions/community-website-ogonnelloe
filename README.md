@@ -208,6 +208,24 @@ You can view the wireframes created for this project in [site wireframes](/docs/
 
 The website is designed using three applications: `Community Website`, `Community Updates`,  and `Noticeboard`.
 
+### Nav
+
+The nav allows you to navigate through the site. Depending on whether you're logged in or not it looks slightly different.
+
+![Nav logged out](nav.png "Nav Logged Out")
+![Nav logged in](nav2.png "Nav Logged In")
+
+### Community Update Card
+
+![Community Update Card](update_card.png "Community Update Card")
+![](.png "")
+![](.png "")
+![](.png "")
+![](.png "")
+![](.png "")
+![](.png "")
+![](.png "")
+
 ### Implemented Features
 
 - The site has **responsive design** when viewed on a mobile, tablet, and desktop.

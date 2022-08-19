@@ -4,7 +4,7 @@
     <div class="container">
     <h1 class="py-2">Noticeboard</h1>
         {% if user.is_authenticated %}
-            <p><a href="{% url 'add_notice' %}" class="btn">Add Notice</a></p>
+            <p><a href="{% url 'add_notice' %}" class="btn notice">Add Notice</a></p>
         {% endif %}
     {% if context.notice_added %}
         <div class="alert alert-success" role="alert">

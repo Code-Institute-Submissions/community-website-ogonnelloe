@@ -65,7 +65,12 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.btn {
+.notice {
+    background-color: #53D8FB !important;
+    color: azure !important;
+}
+
+.update {
     background-color: #003F91 !important;
     color: azure !important;
 }

@@ -27,8 +27,8 @@
                     <p class="card-text">{{ notice.description| safe}}</p>
                     <p class="card-text"><small class="text-muted">Created on: {{ notice.created_on }}</small></p>
                     {% if notice.creator == user.username %}
-                    <a href="{% url 'delete_notice' pk=notice.id %}" class="btn">Delete</a>
-                    <a href="{% url 'update_notice' pk=notice.id %}" class="btn">Update</a>
+                    <a href="{% url 'delete_notice' pk=notice.id %}" class="btn notice">Delete</a>
+                    <a href="{% url 'update_notice' pk=notice.id %}" class="btn notice">Update</a>
                     {% endif %}
                 </div>
             </div>

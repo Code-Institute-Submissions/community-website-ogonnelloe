@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from noticeboard.models import Notice
 from django.views import generic, View
 from django.views.generic.edit import DeleteView, UpdateView
@@ -35,7 +36,7 @@ class AddNotice(View):
              "notice_form": NoticeForm()}
         )
 
-class DeleteNotice(DeleteView):
+class DeleteNotice(LoginRequiredMixin, DeleteView):
 
     model = Notice
 
@@ -43,7 +44,7 @@ class DeleteNotice(DeleteView):
 
     template_name = "notice_confirm_delete.html"
 
-class UpdateNotice(UpdateView):
+class UpdateNotice(LoginRequiredMixin, UpdateView):
      model = Notice
      fields = ['title', 'description', 'contact_number', 'contact_email', 'location', 'background_image']
      template_name = 'notice_update_form.html'

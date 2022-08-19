@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,700&family=Passion+One&display=swap');
+
 /* Font from: https://www.fontzip.com/celtic */
 @font-face {
     font-family: Celtic;
@@ -14,6 +16,16 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Merriweather', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Passion One', Arial;
+}
+
+#logo {
+    font-family: Celtic;
+    font-size: 2.75rem;
+    padding-left: 1.25rem;
 }
 
 /* hero image */
@@ -33,22 +45,27 @@ body {
 }
 
 #cover-text {
-    display: flex;
-    width: 70%;
+    width: 50%;
     height: fit-content;
     text-transform: uppercase;
     position: absolute;
-    left: 15%;
-    top: 10%;
+    left: 25%;
+    top: 30%;
     text-align: center;
 }
 
 #cover-text h2 {
-    font-size: 2rem;
+    font-size: 2.75rem;
     font-family: Celtic;
     margin: auto;
+    font-weight: bold;
 }
 
 #intro-paragraph {
     text-align: center;
+}
+
+.btn {
+    background-color: #003F91 !important;
+    color: azure !important;
 }

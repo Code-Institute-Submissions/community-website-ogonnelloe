@@ -48,6 +48,7 @@ class UpdateNotice(UpdateView):
      fields = ['title', 'description', 'contact_number', 'contact_email', 'location', 'background_image']
      template_name = 'notice_update_form.html'
      success_url = "/noticeboard"
+     context = {'notice_added': True}
 
 
 class Noticeboard(generic.ListView):

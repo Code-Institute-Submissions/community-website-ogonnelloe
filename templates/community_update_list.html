@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+<h1 class="py-2">Community Updates</h1>
 
 <div class="card-group">
         {% for update in object_list %}
@@ -14,10 +16,11 @@
                 <h5 class="card-title">{{ update.title }}</h5>
                 <p class="card-text">{{ update.content | slice:'0:500' | safe}} ...</p>
                 <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
-                <a href="{% url 'community_update_detail' slug=update.slug %}" class="btn btn-primary">Go somewhere</a>
+                <a href="{% url 'community_update_detail' slug=update.slug %}" class="btn">Go somewhere</a>
             </div>
         </div>
         {% endfor %}
+       </div>
 
     {% if is_paginated %}
     <nav aria-label="Page navigation">
@@ -32,6 +35,7 @@
         </ul>
     </nav>
     {% endif %}
-    </div>
+
+</div>
 
 {% endblock %}

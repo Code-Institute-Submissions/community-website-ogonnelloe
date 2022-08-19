@@ -11,7 +11,7 @@
 
     <div class="container my-3">
         <div class="row">
-            <p class="intro-paragraph">Welcome to Ogonnelloe’s community website.Ogonnelloe is situated in a beautiful part of
+            <p class="fs-5 mb-4">Welcome to Ogonnelloe’s community website.Ogonnelloe is situated in a beautiful part of
             East Clare, beside Lough Derg and the Sliabh Bearnagh mountains and between the towns of Killaloe and
             Scariff. Ogonnelloe has a thriving community of approx 850 people.</p>
         </div>
@@ -30,7 +30,7 @@
                             <h5 class="card-title">{{ update.title }}</h5>
                             <p class="card-text">{{ update.content | slice:'0:500' | safe}} ...</p>
                             <p class="card-text"><small class="text-muted">Created on: {{ update.created_on }}</small></p>
-                            <a href="{% url 'community_update_detail' slug=update.slug %}" class="btn btn-primary">Go somewhere</a>
+                            <a href="{% url 'community_update_detail' slug=update.slug %}" class="btn">Read More ...</a>
                         </div>
                     </div>
                 </div>

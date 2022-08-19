@@ -87,15 +87,3 @@ class CommunityUpdateLike(View):
 
         return HttpResponseRedirect(reverse('community_update_detail', args=[slug]))
 
-
-# Static Pages
-
-
-def plan_page(request):
-    """ View to display 3 year plan page """
-    return render(request, "3-year-plan.html")
-
-
-def exchange_page(request):
-    """ View to display exchange page """
-    return render(request, "exchange.html")

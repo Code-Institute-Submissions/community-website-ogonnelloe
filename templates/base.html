@@ -21,7 +21,7 @@
 
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #53D8FB;">
       <div class="container-fluid">
         <a class="navbar-brand" id="logo" href="{% url 'home' %}">Ogonnelloe</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +31,6 @@
           <div class="navbar-nav">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
             <a class="nav-link" href="{% url 'community_update_list' %}">Community Updates</a>
-            <a class="nav-link" href="{% url 'plan_page' %}">3 Year Plan</a>
-            <a class="nav-link" href="{% url 'exchange_page' %}">Exchange</a>
             <a class="nav-link" href="{% url 'noticeboard' %}">Noticeboard</a>
             <hr class="dropdown-divider">
             {% if user.is_authenticated %}

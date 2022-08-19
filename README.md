@@ -225,8 +225,7 @@ A user can sign in to make notices and to like community updates.
 
 A user can sign out of their account.
 
-![Sign Out](media/readme_images/features/sign_out.png "Sign Out")
-![Sign Out Confirm](media/readme_images/features/sign_out_confirm.png "Sign  Confirm")
+![Sign Out Confirm](media/readme_images/features/sign_out_confirm.png "Sign Out Confirm")
 
 ### Sign Up/ Register
 

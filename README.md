@@ -8,7 +8,7 @@
 
 ## Contents
 
-- [NAME](#gift-of-giving)
+- [Ogonnelloes Community Website](#ogonnelloes-community-website)
   - [Contents](#contents)
   - [UX](#ux)
     - [Project Goals](#project-goals)
@@ -26,11 +26,6 @@
   - [Information Architecture](#information-architecture)
     - [Database Choice](#database-choice)
     - [Database Modelling](#database-modelling)
-      - [**Profiles App**](#profiles-app)
-        - [Profile](#profile)
-        - [Charity Address](#charity-address)
-      - [**Gifts App**](#gifts-app)
-        - [Gift](#gift)
       - [**Contact App**](#contact-app)
         - [Contact](#contact)
   - [Technologies](#technologies)

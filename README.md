@@ -270,6 +270,28 @@ Logged in user can view and comments. User can also like the main community upda
 
 Testing was done with automatic unit tests. All tests can be found in the tests.py files of the apps and can be ran in the terminal using the command `python manage.py test`.
 
+PEP8 compliant files (used [Black.io](https://black.readthedocs.io/en/latest/)):
+\community_update_blog\admin.py
+\community_update_blog\apps.py
+\community_update_blog\forms.py
+\community_update_blog\models.py
+\community_update_blog\tests.py
+\community_update_blog\urls.py
+\community_update_blog\views.py
+
+\community_website_ogonnelloe\settings.py
+\community_website_ogonnelloe\urls.py
+
+\noticeboard\admin.py
+\noticeboard\apps.py
+\noticeboard\forms.py
+\noticeboard\models.py
+\noticeboard\urls.py
+\noticeboard\views.py
+
+CSS files were validated (using [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)):
+![(Jigsaw) validator](media/readme_images/CSS%20validation.png "(Jigsaw) validator")
+
 [Back to content](#contents)
 
 ---

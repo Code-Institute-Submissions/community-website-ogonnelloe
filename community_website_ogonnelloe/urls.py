@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('summernote/', include('django_summernote.urls')),
-    path('', include('community_update_blog.urls'), name='community_updates_urls'),
-    path('accounts/', include('allauth.urls')),
-    path('noticeboard/', include('noticeboard.urls'), name='noticeboard_urls'),
+    path("admin/", admin.site.urls),
+    path("summernote/", include("django_summernote.urls")),
+    path("", include("community_update_blog.urls"), name="community_updates_urls"),
+    path("accounts/", include("allauth.urls")),
+    path("noticeboard/", include("noticeboard.urls"), name="noticeboard_urls"),
 ]

@@ -7,14 +7,12 @@ from .forms import NoticeForm
 
 
 class AddNotice(View):
-
     def get(self, request, *args, **kwargs):
 
         return render(
             request,
-            'add_notice.html',
-            {"notice_added": False,
-             "notice_form": NoticeForm()}
+            "add_notice.html",
+            {"notice_added": False, "notice_form": NoticeForm()},
         )
 
     def post(self, request, *args, **kwargs):
@@ -28,13 +26,12 @@ class AddNotice(View):
             notice_form.save()
         else:
             notice_form = NoticeForm()
-
         return render(
             request,
             "add_notice.html",
-            {"notice_added": True,
-             "notice_form": NoticeForm()}
+            {"notice_added": True, "notice_form": NoticeForm()},
         )
+
 
 class DeleteNotice(LoginRequiredMixin, DeleteView):
 
@@ -44,17 +41,25 @@ class DeleteNotice(LoginRequiredMixin, DeleteView):
 
     template_name = "notice_confirm_delete.html"
 
+
 class UpdateNotice(LoginRequiredMixin, UpdateView):
-     model = Notice
-     fields = ['title', 'description', 'contact_number', 'contact_email', 'location', 'background_image']
-     template_name = 'notice_update_form.html'
-     success_url = "/noticeboard"
-     context = {'notice_added': True}
+    model = Notice
+    fields = [
+        "title",
+        "description",
+        "contact_number",
+        "contact_email",
+        "location",
+        "background_image",
+    ]
+    template_name = "notice_update_form.html"
+    success_url = "/noticeboard"
+    context = {"notice_added": True}
 
 
 class Noticeboard(generic.ListView):
 
     model = Notice
-    queryset = Notice.objects.filter(approved=True).order_by('created_on')
-    template_name = 'noticeboard.html'
+    queryset = Notice.objects.filter(approved=True).order_by("created_on")
+    template_name = "noticeboard.html"
     paginate_by = 2
